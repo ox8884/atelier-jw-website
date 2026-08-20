@@ -50,6 +50,7 @@ The script creates a temporary directory containing only these public files:
 - concepts/clear/index.html
 - concepts/warm/index.html
 - concepts/bold/index.html
+- concepts/museum/index.html
 
 It reads the existing Wrangler OAuth credential without printing it, deploys the allowlist, and removes only its own temporary directory when finished.
 

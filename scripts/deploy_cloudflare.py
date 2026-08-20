@@ -23,6 +23,7 @@ PUBLIC_CONCEPTS = [
     "clear/index.html",
     "warm/index.html",
     "bold/index.html",
+    "museum/index.html",
 ]
 
 
