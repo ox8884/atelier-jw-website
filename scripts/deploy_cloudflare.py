@@ -18,6 +18,12 @@ PUBLIC_ASSETS = [
     "bakery-hands.webp",
     "cafe-interior.webp",
 ]
+PUBLIC_CONCEPTS = [
+    "index.html",
+    "clear/index.html",
+    "warm/index.html",
+    "bold/index.html",
+]
 
 
 def oauth_token() -> str | None:
@@ -38,6 +44,7 @@ def oauth_token() -> str | None:
 def main() -> None:
     missing = [name for name in PUBLIC_FILES if not (ROOT / name).is_file()]
     missing += [f"assets/{name}" for name in PUBLIC_ASSETS if not (ROOT / "assets" / name).is_file()]
+    missing += [f"concepts/{name}" for name in PUBLIC_CONCEPTS if not (ROOT / "concepts" / name).is_file()]
     if missing:
         raise SystemExit(f"Missing public files: {', '.join(missing)}")
 
@@ -53,6 +60,11 @@ def main() -> None:
         assets.mkdir()
         for name in PUBLIC_ASSETS:
             shutil.copy2(ROOT / "assets" / name, assets / name)
+        concepts = out / "concepts"
+        for name in PUBLIC_CONCEPTS:
+            destination = concepts / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / "concepts" / name, destination)
 
         files = [path for path in out.rglob("*") if path.is_file()]
         print(f"Deploying {len(files)} allowlisted public files.")

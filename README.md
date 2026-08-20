@@ -26,6 +26,15 @@ python scripts/deploy_cloudflare.py
 
 See `DEPLOYMENT.md` for DNS, security, and verification details.
 
+## Redesign concepts
+
+The production homepage remains unchanged while alternatives are reviewed:
+
+- Comparison: https://atelier-jw.com/concepts/
+- Clear House: https://atelier-jw.com/concepts/clear/
+- Warm Neighborhood: https://atelier-jw.com/concepts/warm/
+- Bold Brand House: https://atelier-jw.com/concepts/bold/
+
 ## Custom domain
 
 Production domain: `atelier-jw.com`
