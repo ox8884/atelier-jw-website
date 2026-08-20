@@ -18,6 +18,10 @@ The site is static and can deploy directly to Cloudflare Pages, GitHub Pages, Ne
 
 Production domain: `atelier-jw.com`
 
+Live preview: https://ox8884.github.io/atelier-jw-website/
+
+GitHub repository: https://github.com/ox8884/atelier-jw-website
+
 For Cloudflare Pages:
 
 1. Create a Pages project from this Git repository.
