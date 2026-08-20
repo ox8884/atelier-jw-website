@@ -1,66 +1,82 @@
 # Deployment and custom-domain guide
 
-## Current status
+## Production status
 
-- Production domain: `atelier-jw.com`
-- Registration date: 2026-08-20
-- Current nameservers:
-  - `ns1.systemdns.com`
-  - `ns2.systemdns.com`
-  - `ns3.systemdns.com`
-- GitHub repository: https://github.com/ox8884/atelier-jw-website
-- Live preview: https://ox8884.github.io/atelier-jw-website/
-- Cloudflare authentication: not configured yet
+- Production: https://atelier-jw.com
+- Alternate host: https://www.atelier-jw.com
+- Cloudflare Pages: https://atelier-jw.pages.dev
+- GitHub: https://github.com/ox8884/atelier-jw-website
+- Cloudflare project: `atelier-jw`
+- Nameservers: `arya.ns.cloudflare.com`, `jay.ns.cloudflare.com`
+- DNS zone: active
+- HTTPS: active on root and www
+- Email DNS preserved: MX, SPF, DMARC
 
-## Recommended production setup
+## DNS architecture
 
-Use Cloudflare Pages Free. Keep the domain registration with Bizee and change only the nameservers after the Cloudflare zone is ready.
+Bizee remains the domain registrar. Cloudflare is the authoritative DNS provider and Pages host. Do not request a transfer code unless intentionally moving the domain registration away from Bizee.
 
-### 1. Create the Cloudflare zone
+Website records:
 
-1. Sign in or create an account at https://dash.cloudflare.com.
-2. Choose **Add a domain** and enter `atelier-jw.com`.
-3. Select the Free plan.
-4. Let Cloudflare scan existing DNS records.
-5. Before changing nameservers, confirm that any email-related `MX`, `TXT`, SPF, DKIM, or verification records were imported.
-6. Copy the two Cloudflare nameservers assigned to the domain.
+- CNAME `@` -> `atelier-jw.pages.dev` (proxied)
+- CNAME `www` -> `atelier-jw.pages.dev` (proxied)
 
-### 2. Update nameservers at Bizee
+Email records retained:
 
-1. Open the Bizee domain dashboard for `atelier-jw.com`.
-2. Find Domain settings, DNS, or Nameservers.
-3. Choose custom nameservers.
-4. Replace the three `systemdns.com` nameservers with the two assigned by Cloudflare.
-5. Save and wait for DNS propagation. It can be quick but may take up to 24-48 hours.
+- MX `atelier-jw.com` -> `mx.atelier-jw.com.cust.hostedemail.com` priority 10
+- TXT SPF -> `v=spf1 include:_spf.hostedemail.com ~all`
+- TXT DMARC `_dmarc` -> `v=DMARC1; p=none; rua=mailto:jayheo8884@gmail.com`
 
-Do not change nameservers before Cloudflare has added the zone and imported any email records.
+## Safe deployment
 
-### 3. Create the Cloudflare Pages project
+Never run `wrangler pages deploy .` from the repository root. That can upload `.git`, test reports, and unrelated files.
 
-1. Open **Workers & Pages** in Cloudflare.
-2. Create a Pages project and connect GitHub.
-3. Select `ox8884/atelier-jw-website`.
-4. Framework preset: None.
-5. Build command: leave blank.
-6. Build output directory: repository root (`/` or `.` as accepted by the UI).
-7. Deploy.
+Use the allowlist deployment script:
 
-### 4. Attach the custom domain
+```bash
+python scripts/deploy_cloudflare.py
+```
 
-1. In the Pages project, open **Custom domains**.
-2. Add `atelier-jw.com`.
-3. Add `www.atelier-jw.com`.
-4. Set the preferred canonical host to `atelier-jw.com` and redirect `www` to the apex domain if Cloudflare does not do so automatically.
-5. Wait for the Cloudflare SSL certificate to become active.
+The script creates a temporary directory containing only these public files:
 
-### 5. Verify
+- index.html
+- styles.css
+- script.js
+- robots.txt
+- sitemap.xml
+- _headers
+- five optimized WebP images
 
-- `https://atelier-jw.com` loads without a certificate warning.
-- `https://www.atelier-jw.com` redirects or serves the same site.
-- Mobile and desktop render correctly.
-- Contact links open the email client.
-- Existing email, if configured later, has valid MX and SPF/DKIM records.
+It reads the existing Wrangler OAuth credential without printing it, deploys the allowlist, and removes only its own temporary directory when finished.
 
-## Future updates
+## Verification
 
-Push changes to the `main` branch. Cloudflare Pages will redeploy automatically when connected to GitHub.
+After every deployment:
+
+```bash
+curl -fsSI https://atelier-jw.com/
+curl -fsSI https://www.atelier-jw.com/
+```
+
+Expected: HTTP 200, Cloudflare server header, CSP and security headers present.
+
+Sensitive-path checks must return the homepage fallback, not repository contents:
+
+```bash
+curl -fsS https://atelier-jw.com/.git/config
+curl -fsS https://atelier-jw.com/.lighthouse-tmp/production.json
+```
+
+The response should start with `<!doctype html>`, never Git configuration or JSON.
+
+## Quality baseline
+
+Production Lighthouse after deployment:
+
+- Performance: 98
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+- LCP: 1.8 s
+- TBT: 0 ms
+- CLS: 0

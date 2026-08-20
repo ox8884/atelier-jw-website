@@ -12,7 +12,19 @@ Open `http://localhost:4173`.
 
 ## Deployment
 
-The site is static and can deploy directly to Cloudflare Pages, GitHub Pages, Netlify, or Vercel. No build command is required. The output directory is the repository root.
+Production: https://atelier-jw.com
+
+Cloudflare Pages fallback: https://atelier-jw.pages.dev
+
+GitHub: https://github.com/ox8884/atelier-jw-website
+
+Deploy only through the allowlist script. Never deploy the repository root directly.
+
+```bash
+python scripts/deploy_cloudflare.py
+```
+
+See `DEPLOYMENT.md` for DNS, security, and verification details.
 
 ## Custom domain
 
@@ -41,4 +53,4 @@ Photography is downloaded locally from Unsplash and used under the Unsplash Lice
 
 ## Privacy
 
-The site uses no analytics, cookies, trackers, forms, or third-party scripts. Contact opens the user's email client.
+The site uses no forms or advertising trackers. Cloudflare Web Analytics is injected by the hosting platform for privacy-focused aggregate performance and traffic measurement. Contact links open the user's email client.
