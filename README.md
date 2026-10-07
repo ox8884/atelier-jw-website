@@ -28,13 +28,7 @@ See `DEPLOYMENT.md` for DNS, security, and verification details.
 
 ## Redesign concepts
 
-The production homepage remains unchanged while alternatives are reviewed:
-
-- Comparison: https://atelier-jw.com/concepts/
-- Clear House: https://atelier-jw.com/concepts/clear/
-- Warm Neighborhood: https://atelier-jw.com/concepts/warm/
-- Bold Brand House: https://atelier-jw.com/concepts/bold/
-- Cultural Brand House: https://atelier-jw.com/concepts/museum/
+Earlier redesign drafts live in `concepts/` for reference. They are not published; open them locally (for example `python -m http.server` and visit `/concepts/`).
 
 ## Custom domain
 

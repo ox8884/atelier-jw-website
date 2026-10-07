@@ -9,7 +9,10 @@
   <meta property="og:description" content="A family company in Celina, Texas. Kitchen goods now. Bakery and café next.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atelier-jw.com">
-  <meta property="og:image" content="https://atelier-jw.com/assets/photo-hero-light.webp">
+  <meta property="og:image" content="https://atelier-jw.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A long table set with linen, stoneware bowls, and a shared meal in soft daylight">
   <link rel="canonical" href="https://atelier-jw.com">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f3d30'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='%23f3eee4' font-size='24' font-style='italic' font-family='Georgia,serif'%3EJW%3C/text%3E%3C/svg%3E">
   <title>Atelier JW | Celina, Texas</title>
@@ -25,7 +28,7 @@
       document.documentElement.dataset.theme = t;
       document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#121210' : '#f3eee4';
       var l = document.createElement('link');
-      l.rel = 'preload'; l.as = 'image'; l.fetchPriority = 'high'; l.href = 'assets/photo-hero-' + t + '.webp';
+      l.rel = 'preload'; l.as = 'image'; l.fetchPriority = 'high'; l.href = t === 'dark' ? 'assets/photo-hero-dark.webp' : 'assets/photo-hero-light.webp';
       document.head.appendChild(l);
     })();
   </script>

@@ -45,12 +45,17 @@ The script creates a temporary directory containing only these public files:
 - robots.txt
 - sitemap.xml
 - _headers
-- five optimized WebP images
-- concepts/index.html
-- concepts/clear/index.html
-- concepts/warm/index.html
-- concepts/bold/index.html
-- concepts/museum/index.html
+- the `PUBLIC_ASSETS` photos and `og-image.jpg`
+
+Assets are published under content-hashed names (`photo-hero-light.18cd83f4.webp`) and the deployed `index.html` is rewritten to match, because `/assets/*` is cached as immutable for a year. Replace a photo in place under the same source name; the next deploy gives it a new URL. The script refuses to deploy if `index.html` references an asset that is not in the allowlist.
+
+Preview what would be uploaded without deploying:
+
+```bash
+python scripts/deploy_cloudflare.py --dry-run
+```
+
+The `concepts/` redesign drafts and the original photos stay in the repository for reference but are no longer published.
 
 It reads the existing Wrangler OAuth credential without printing it, deploys the allowlist, and removes only its own temporary directory when finished.
 

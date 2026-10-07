@@ -1,22 +1,34 @@
 const menuButton = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
 
+// Everything behind the full-screen menu; made inert so Tab stays in the header + menu.
+const behindMenu = document.querySelectorAll('.skip-link, main, .site-footer');
+const isMenuOpen = () => menuButton?.getAttribute('aria-expanded') === 'true';
+
+function setMenu(open) {
+  menuButton?.setAttribute('aria-expanded', String(open));
+  if (mobileMenu) mobileMenu.hidden = !open;
+  document.body.style.overflow = open ? 'hidden' : '';
+  behindMenu.forEach((element) => { element.inert = open; });
+}
+
 function closeMenu() {
-  menuButton?.setAttribute('aria-expanded', 'false');
-  if (mobileMenu) mobileMenu.hidden = true;
-  document.body.style.overflow = '';
+  setMenu(false);
 }
 
 menuButton?.addEventListener('click', () => {
-  const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(willOpen));
-  if (mobileMenu) mobileMenu.hidden = !willOpen;
-  document.body.style.overflow = willOpen ? 'hidden' : '';
+  const willOpen = !isMenuOpen();
+  setMenu(willOpen);
+  if (willOpen) mobileMenu?.querySelector('a')?.focus();
 });
 
 mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 matchMedia('(min-width: 861px)').addEventListener('change', (e) => e.matches && closeMenu());
-document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape' || !isMenuOpen()) return;
+  closeMenu();
+  menuButton.focus();
+});
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals = document.querySelectorAll('.reveal');

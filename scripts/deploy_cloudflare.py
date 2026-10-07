@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import hashlib
 import os
+import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import tomllib
 from pathlib import Path
@@ -11,12 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT = "atelier-jw"
 ACCOUNT_ID = "6c9a027f1f7b30461dc3f80864fb61f2"
 PUBLIC_FILES = ["index.html", "styles.css", "script.js", "robots.txt", "sitemap.xml", "_headers"]
+# Assets are served with an immutable 1-year cache, so they are published under
+# content-hashed names (photo.1a2b3c4d.webp) and index.html is rewritten to match.
+# Replacing a photo in place is therefore safe: its published name changes.
 PUBLIC_ASSETS = [
-    "hero-desktop.webp",
-    "hero-mobile.webp",
-    "forge-kitchen.webp",
-    "bakery-hands.webp",
-    "cafe-interior.webp",
+    "og-image.jpg",
     "photo-hero-light.webp",
     "photo-hero-dark.webp",
     "photo-kitchen-light.webp",
@@ -26,13 +28,12 @@ PUBLIC_ASSETS = [
     "photo-bakery-light.webp",
     "photo-bakery-dark.webp",
 ]
-PUBLIC_CONCEPTS = [
-    "index.html",
-    "clear/index.html",
-    "warm/index.html",
-    "bold/index.html",
-    "museum/index.html",
-]
+
+
+def hashed_name(name: str) -> str:
+    digest = hashlib.sha256((ROOT / "assets" / name).read_bytes()).hexdigest()[:8]
+    stem, _, ext = name.rpartition(".")
+    return f"{stem}.{digest}.{ext}"
 
 
 def oauth_token() -> str | None:
@@ -53,12 +54,12 @@ def oauth_token() -> str | None:
 def main() -> None:
     missing = [name for name in PUBLIC_FILES if not (ROOT / name).is_file()]
     missing += [f"assets/{name}" for name in PUBLIC_ASSETS if not (ROOT / "assets" / name).is_file()]
-    missing += [f"concepts/{name}" for name in PUBLIC_CONCEPTS if not (ROOT / "concepts" / name).is_file()]
     if missing:
         raise SystemExit(f"Missing public files: {', '.join(missing)}")
 
-    token = oauth_token()
-    if not token:
+    dry_run = "--dry-run" in sys.argv
+    token = None if dry_run else oauth_token()
+    if not dry_run and not token:
         raise SystemExit("Cloudflare credentials not found. Run: npx wrangler login --device --browser=false")
 
     with tempfile.TemporaryDirectory(prefix="atelier-jw-deploy-") as temp:
@@ -67,15 +68,20 @@ def main() -> None:
             shutil.copy2(ROOT / name, out / name)
         assets = out / "assets"
         assets.mkdir()
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
         for name in PUBLIC_ASSETS:
-            shutil.copy2(ROOT / "assets" / name, assets / name)
-        concepts = out / "concepts"
-        for name in PUBLIC_CONCEPTS:
-            destination = concepts / name
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(ROOT / "concepts" / name, destination)
+            published = hashed_name(name)
+            shutil.copy2(ROOT / "assets" / name, assets / published)
+            html = html.replace(f"assets/{name}", f"assets/{published}")
+        broken = [ref for ref in re.findall(r"assets/[\w.-]+", html) if not (out / ref).is_file()]
+        if broken:
+            raise SystemExit(f"index.html references unpublished assets: {', '.join(sorted(set(broken)))}")
+        (out / "index.html").write_text(html, encoding="utf-8")
 
         files = [path for path in out.rglob("*") if path.is_file()]
+        if dry_run:
+            print("\n".join(sorted(path.relative_to(out).as_posix() for path in files)))
+            return
         print(f"Deploying {len(files)} allowlisted public files.")
         env = os.environ.copy()
         env["CLOUDFLARE_API_TOKEN"] = token
