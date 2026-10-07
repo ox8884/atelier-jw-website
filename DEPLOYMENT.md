@@ -54,8 +54,9 @@ The script creates a temporary directory containing only these public files:
 - sitemap.xml
 - _headers
 - the `PUBLIC_ASSETS` photos and `og-image.jpg`
+- `styles.css` and `script.js`, published as `assets/styles.<hash>.css` and `assets/script.<hash>.js`
 
-Assets are published under content-hashed names (`photo-hero-light.18cd83f4.webp`) and the deployed `index.html` is rewritten to match, because `/assets/*` is cached as immutable for a year. Replace a photo in place under the same source name; the next deploy gives it a new URL. The script refuses to deploy if `index.html` references an asset that is not in the allowlist.
+Assets (including the stylesheet and script) are published under content-hashed names (`photo-hero-light.18cd83f4.webp`) and the deployed `index.html` is rewritten to match, because `/assets/*` is cached as immutable for a year. Replace a photo in place under the same source name; the next deploy gives it a new URL. The script refuses to deploy if `index.html` references an asset that is not in the allowlist.
 
 Preview what would be uploaded without deploying:
 

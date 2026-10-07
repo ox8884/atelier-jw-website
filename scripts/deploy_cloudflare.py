@@ -13,7 +13,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = "atelier-jw"
 ACCOUNT_ID = "6c9a027f1f7b30461dc3f80864fb61f2"
-PUBLIC_FILES = ["index.html", "styles.css", "script.js", "robots.txt", "sitemap.xml", "_headers"]
+PUBLIC_FILES = ["index.html", "robots.txt", "sitemap.xml", "_headers"]
+# Published as assets/<name>.<hash>.<ext> alongside the photos (same immutable cache rule).
+HASHED_ROOT_FILES = ["styles.css", "script.js"]
 # Assets are served with an immutable 1-year cache, so they are published under
 # content-hashed names (photo.1a2b3c4d.webp) and index.html is rewritten to match.
 # Replacing a photo in place is therefore safe: its published name changes.
@@ -30,9 +32,9 @@ PUBLIC_ASSETS = [
 ]
 
 
-def hashed_name(name: str) -> str:
-    digest = hashlib.sha256((ROOT / "assets" / name).read_bytes()).hexdigest()[:8]
-    stem, _, ext = name.rpartition(".")
+def hashed_name(path: Path) -> str:
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()[:8]
+    stem, _, ext = path.name.rpartition(".")
     return f"{stem}.{digest}.{ext}"
 
 
@@ -52,7 +54,7 @@ def oauth_token() -> str | None:
 
 
 def main() -> None:
-    missing = [name for name in PUBLIC_FILES if not (ROOT / name).is_file()]
+    missing = [name for name in PUBLIC_FILES + HASHED_ROOT_FILES if not (ROOT / name).is_file()]
     missing += [f"assets/{name}" for name in PUBLIC_ASSETS if not (ROOT / "assets" / name).is_file()]
     if missing:
         raise SystemExit(f"Missing public files: {', '.join(missing)}")
@@ -72,9 +74,15 @@ def main() -> None:
         assets.mkdir()
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         for name in PUBLIC_ASSETS:
-            published = hashed_name(name)
+            published = hashed_name(ROOT / "assets" / name)
             shutil.copy2(ROOT / "assets" / name, assets / published)
             html = html.replace(f"assets/{name}", f"assets/{published}")
+        for name in HASHED_ROOT_FILES:
+            published = hashed_name(ROOT / name)
+            shutil.copy2(ROOT / name, assets / published)
+            if html.count(f'"{name}"') != 1:
+                raise SystemExit(f"Expected exactly one reference to {name} in index.html")
+            html = html.replace(f'"{name}"', f'"assets/{published}"')
         broken = [ref for ref in re.findall(r"assets/[\w.-]+", html) if not (out / ref).is_file()]
         if broken:
             raise SystemExit(f"index.html references unpublished assets: {', '.join(sorted(set(broken)))}")
