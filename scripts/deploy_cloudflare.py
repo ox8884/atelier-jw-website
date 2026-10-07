@@ -17,6 +17,14 @@ PUBLIC_ASSETS = [
     "forge-kitchen.webp",
     "bakery-hands.webp",
     "cafe-interior.webp",
+    "photo-hero-light.webp",
+    "photo-hero-dark.webp",
+    "photo-kitchen-light.webp",
+    "photo-kitchen-dark.webp",
+    "photo-gather-light.webp",
+    "photo-gather-dark.webp",
+    "photo-bakery-light.webp",
+    "photo-bakery-dark.webp",
 ]
 PUBLIC_CONCEPTS = [
     "index.html",

@@ -15,6 +15,8 @@ menuButton?.addEventListener('click', () => {
 });
 
 mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+matchMedia('(min-width: 861px)').addEventListener('change', (e) => e.matches && closeMenu());
+document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals = document.querySelectorAll('.reveal');
@@ -33,6 +35,28 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 
   reveals.forEach((element) => observer.observe(element));
 }
+
+const root = document.documentElement;
+const themeToggle = document.querySelector('.theme-toggle');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+
+function applyTheme(theme) {
+  root.dataset.theme = theme;
+  themeToggle?.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  themeColor?.setAttribute('content', theme === 'dark' ? '#121210' : '#f3eee4');
+}
+
+applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+themeToggle?.addEventListener('click', () => {
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
+const header = document.querySelector('.site-header');
+const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());

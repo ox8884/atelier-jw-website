@@ -4,122 +4,152 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Atelier JW is a family-owned company in Celina, Texas. We build Forge Kitchen and are working toward a bakery and café.">
-  <meta name="theme-color" content="#001d1f">
+  <meta name="theme-color" content="#f3eee4">
   <meta property="og:title" content="Atelier JW">
   <meta property="og:description" content="A family company in Celina, Texas. Kitchen goods now. Bakery and café next.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atelier-jw.com">
-  <meta property="og:image" content="https://atelier-jw.com/assets/cafe-interior.webp">
+  <meta property="og:image" content="https://atelier-jw.com/assets/photo-hero-light.webp">
   <link rel="canonical" href="https://atelier-jw.com">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23001d1f'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='%23ffc982' font-size='18' font-weight='800' font-family='sans-serif'%3EJW%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f3d30'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='%23f3eee4' font-size='24' font-style='italic' font-family='Georgia,serif'%3EJW%3C/text%3E%3C/svg%3E">
   <title>Atelier JW | Celina, Texas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Atelier JW LLC","url":"https://atelier-jw.com","email":"jayheo8884@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Celina","addressRegion":"TX","addressCountry":"US"},"brand":[{"@type":"Brand","name":"Forge Kitchen"}]}</script>
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#121210' : '#f3eee4';
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'image'; l.fetchPriority = 'high'; l.href = 'assets/photo-hero-' + t + '.webp';
+      document.head.appendChild(l);
+    })();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Atelier JW LLC","url":"https://atelier-jw.com","email":"jayheo@atelier-jw.com","address":{"@type":"PostalAddress","addressLocality":"Celina","addressRegion":"TX","addressCountry":"US"},"brand":[{"@type":"Brand","name":"Forge Kitchen","url":"https://forgekitchen.com"}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="logo" href="/">Atelier&nbsp;JW</a>
+    <a class="logo" href="/">Atelier <em>JW</em></a>
     <nav class="desktop-nav" aria-label="Primary">
-      <a href="#about">Story</a>
+      <a href="#company">Company</a>
       <a href="#brands">Brands</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="header-cta" href="mailto:jayheo8884@gmail.com">Say hello</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
   </header>
   <nav id="mobile-menu" class="mobile-menu" hidden>
-    <a href="#about">Story</a>
+    <a href="#company">Company</a>
     <a href="#brands">Brands</a>
     <a href="#contact">Contact</a>
-    <a href="mailto:jayheo8884@gmail.com">Say hello</a>
   </nav>
 
   <main id="main">
     <section class="hero">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Celina, Texas · Family company</p>
-        <h1>Made with care.<br>Built for gathering.</h1>
+      <p class="hero-meta reveal"><span>Celina, Texas</span><span>Family company</span><span>Est. by Jay &amp; Wave</span></p>
+      <h1 class="hero-title reveal">
+        <span>Made with care,</span>
+        <span class="indent"><em>built</em> for</span>
+        <span>gathering.</span>
+      </h1>
+      <div class="hero-foot reveal">
         <p class="lede">We are Jay and Wave. Forge Kitchen is our first brand. The next chapter is bread, coffee, and a place to gather.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#brands">What we are building</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
-        </div>
+        <a class="round-link" href="#company" aria-label="Scroll to the company">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+        </a>
       </div>
       <figure class="hero-media reveal">
-        <img src="assets/cafe-interior.webp" alt="Warm café counter with plates, cookies, and globe lights">
-        <figcaption class="hero-card">
-          <span class="hero-card-label">Atelier JW</span>
-          <span class="hero-card-sub">Kitchen · Bakery · Café</span>
-        </figcaption>
+        <img class="img-light" src="assets/photo-hero-light.webp" alt="A long table set with linen, stoneware bowls, and a shared meal in soft daylight" width="2400" height="1600" loading="lazy" fetchpriority="high">
+        <img class="img-dark" src="assets/photo-hero-dark.webp" alt="A long dinner table set with white plates and glowing candles" width="2400" height="1600" loading="lazy" fetchpriority="high">
       </figure>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Home goods</span><i>✦</i><span>Food</span><i>✦</i><span>Hospitality</span><i>✦</i><span>Celina, Texas</span><i>✦</i>
-        <span>Home goods</span><i>✦</i><span>Food</span><i>✦</i><span>Hospitality</span><i>✦</i><span>Celina, Texas</span><i>✦</i>
+    <section class="company" id="company">
+      <p class="label reveal"><span>01</span>The company</p>
+      <div class="company-body">
+        <h2 class="statement reveal">One studio, <em>two chapters.</em> A small family company making daily life feel a little better.</h2>
+        <div class="company-text reveal">
+          <p>Atelier JW LLC is a small family company. Jay’s restaurant experience shapes practical kitchen products. Wave’s love of baking points toward a future bakery and café.</p>
+          <p class="aside">The work is practical. The feeling should still be warm.</p>
+        </div>
       </div>
-    </div>
-
-    <section class="about" id="about">
-      <div class="about-copy reveal">
-        <p class="eyebrow">The company</p>
-        <h2>One studio.<br>Two chapters.</h2>
-        <p>Atelier JW LLC is a small family company. Jay’s restaurant experience shapes practical kitchen products. Wave’s love of baking points toward a future bakery and café. The thread is simple: make daily life feel better.</p>
-        <p class="about-note">The work is practical. The feeling should still be warm.</p>
-      </div>
-      <ul class="facts reveal">
-        <li><span>Founded</span><strong>Celina, Texas</strong></li>
-        <li><span>First brand</span><strong>Forge Kitchen</strong></li>
-        <li><span>Next</span><strong>Bakery + Café</strong></li>
-      </ul>
+      <dl class="facts reveal">
+        <div><dt>Founded</dt><dd>Celina, Texas</dd></div>
+        <div><dt>First brand</dt><dd>Forge Kitchen</dd></div>
+        <div><dt>Next</dt><dd>Bakery + Café</dd></div>
+      </dl>
     </section>
 
     <section class="brands" id="brands">
-      <div class="section-head reveal">
-        <p class="eyebrow">Brands</p>
-        <h2>What we are building</h2>
+      <p class="label reveal"><span>02</span>Brands</p>
+      <h2 class="section-title reveal">What we are <em>building</em></h2>
+      <div class="brand-grid">
+        <a class="brand-card reveal" href="https://forgekitchen.com" target="_blank" rel="noopener">
+          <div class="brand-media">
+            <img class="img-light" src="assets/photo-kitchen-light.webp" alt="Stacked cream stoneware bowls on a wooden shelf" width="1400" height="2100" loading="lazy">
+            <img class="img-dark" src="assets/photo-kitchen-dark.webp" alt="A black cast-iron dutch oven on a stovetop" width="1400" height="2100" loading="lazy">
+            <span class="chip live">Live brand</span>
+          </div>
+          <div class="brand-copy">
+            <h3>Forge Kitchen</h3>
+            <p>Kitchen and tabletop goods made for real daily use. Simple, durable, and worth keeping on the counter.</p>
+            <span class="brand-cta">Visit forgekitchen.com <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </a>
+        <article class="brand-card reveal">
+          <div class="brand-media">
+            <img class="img-light" src="assets/photo-bakery-light.webp" alt="Madeleines in a parchment-lined rattan basket on white marble" width="1000" height="1600" loading="lazy">
+            <img class="img-dark" src="assets/photo-bakery-dark.webp" alt="Fruit tartlets with berries and kiwi on black slate" width="1000" height="1250" loading="lazy">
+            <span class="chip">Next chapter</span>
+          </div>
+          <div class="brand-copy">
+            <h3>Bakery + Café</h3>
+            <p>Bread, coffee, Korean sensibility, and Texas hospitality. A neighborhood place we are working toward.</p>
+            <span class="brand-cta muted">Coming soon</span>
+          </div>
+        </article>
       </div>
-      <article class="brand-block reveal">
-        <div class="brand-media">
-          <img src="assets/forge-kitchen.webp" alt="Forge Kitchen visual of a green oven wall">
-        </div>
-        <div class="brand-copy coral">
-          <p class="eyebrow">Live brand</p>
-          <h3>Forge Kitchen</h3>
-          <p>Kitchen and tabletop goods made for real daily use. Simple, durable, and worth keeping on the counter.</p>
-        </div>
-      </article>
-      <article class="brand-block reverse reveal">
-        <div class="brand-media">
-          <img src="assets/bakery-hands.webp" alt="Hands working dough for the future bakery">
-        </div>
-        <div class="brand-copy mint">
-          <p class="eyebrow">Next chapter</p>
-          <h3>Bakery + Café</h3>
-          <p>Bread, coffee, Korean sensibility, and Texas hospitality. A neighborhood place we are working toward.</p>
-        </div>
-      </article>
+    </section>
+
+    <section class="gather">
+      <figure class="gather-media reveal">
+        <img class="img-light" src="assets/photo-gather-light.webp" alt="A cappuccino on a small marble café table by a sunny window, rattan chairs behind" width="1000" height="1500" loading="lazy">
+        <img class="img-dark" src="assets/photo-gather-dark.webp" alt="A glazed stoneware coffee cup on a dark saucer, caught in a single shaft of light" width="1000" height="1500" loading="lazy">
+      </figure>
+      <blockquote class="gather-quote reveal">
+        <p>“Bread, coffee, and a place to <em>gather.</em>”</p>
+        <cite>The next chapter</cite>
+      </blockquote>
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-inner reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Talk with us.</h2>
-        <p>For Forge Kitchen, partnerships, or the bakery project, email Jay.</p>
-        <a class="btn big" href="mailto:jayheo8884@gmail.com">jayheo8884@gmail.com</a>
-      </div>
+      <p class="label reveal"><span>03</span>Contact</p>
+      <h2 class="contact-title reveal">Talk <em>with us.</em></h2>
+      <p class="contact-text reveal">For Forge Kitchen, partnerships, or the bakery project, email Jay.</p>
+      <a class="contact-mail reveal" href="mailto:jayheo@atelier-jw.com">jayheo@atelier-jw.com <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <strong>Atelier JW LLC</strong>
-    <span>Celina, Texas</span>
-    <span>© <span id="year">2026</span></span>
+    <p class="footer-mark" aria-hidden="true">Atelier <em>JW</em></p>
+    <div class="footer-row">
+      <span>Atelier JW LLC</span>
+      <span>Celina, Texas</span>
+      <a href="mailto:jayheo@atelier-jw.com">jayheo@atelier-jw.com</a>
+      <span>© <span id="year">2026</span></span>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
 </html>
-
