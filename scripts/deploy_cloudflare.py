@@ -58,6 +58,8 @@ def main() -> None:
         raise SystemExit(f"Missing public files: {', '.join(missing)}")
 
     dry_run = "--dry-run" in sys.argv
+    if not dry_run and not (ROOT / "node_modules" / "wrangler" / "package.json").is_file():
+        raise SystemExit("wrangler is not installed. Run: npm ci")
     token = None if dry_run else oauth_token()
     if not dry_run and not token:
         raise SystemExit("Cloudflare credentials not found. Run: npx wrangler login --device --browser=false")
@@ -90,8 +92,10 @@ def main() -> None:
         if not npx:
             raise SystemExit("npx not found")
         subprocess.run(
-            [npx, "--yes", "wrangler", "pages", "deploy", str(out), "--project-name", PROJECT, "--branch", "main"],
+            # --no: use the wrangler pinned in package.json, never fetch another version
+            [npx, "--no", "--", "wrangler", "pages", "deploy", str(out), "--project-name", PROJECT, "--branch", "main"],
             check=True,
+            cwd=ROOT,
             env=env,
         )
 

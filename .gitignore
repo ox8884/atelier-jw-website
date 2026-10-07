@@ -7,3 +7,6 @@ Thumbs.db
 # Local test artifacts
 *.log
 .lighthouse-tmp/
+
+# Node (wrangler for deploys)
+node_modules/

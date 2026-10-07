@@ -31,11 +31,19 @@ Email records retained:
 
 Never run `wrangler pages deploy .` from the repository root. That can upload `.git`, test reports, and unrelated files.
 
-Use the allowlist deployment script:
+Install the pinned Wrangler version once per checkout (it lives in `node_modules/`, which is git-ignored):
+
+```bash
+npm ci
+```
+
+Then use the allowlist deployment script:
 
 ```bash
 python scripts/deploy_cloudflare.py
 ```
+
+The script runs the repository's own Wrangler (`package.json` pins the exact version) and stops with a hint if it is not installed, instead of fetching an unpinned copy.
 
 The script creates a temporary directory containing only these public files:
 

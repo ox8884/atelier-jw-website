@@ -1,0 +1,8 @@
+{
+  "name": "atelier-jw-site",
+  "private": true,
+  "description": "Static site for atelier-jw.com; npm is only used to pin the Cloudflare deploy tool.",
+  "devDependencies": {
+    "wrangler": "4.128.0"
+  }
+}
