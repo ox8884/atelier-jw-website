@@ -46,9 +46,13 @@ For Cloudflare Pages:
 4. Add `atelier-jw.com` and `www.atelier-jw.com` under Custom domains.
 5. Follow Cloudflare's DNS instructions. Preserve any MX records used for email.
 
-## Image credits
+## Photography
 
-Photography is downloaded locally from Unsplash and used under the Unsplash License:
+The published photographs are illustrative images generated with a GPT image model in November 2026. They set a mood; they do not show actual Forge Kitchen products or a real café location, and the footer says so. Each file carries its generation prompt (PNG metadata, or a `.json` sidecar next to a `.webp`).
+
+Fonts (Castoro, Red Hat Text) are self-hosted from `assets/fonts/` under the SIL Open Font License.
+
+Earlier Unsplash photographs remain in `assets/` for reference and are no longer published:
 
 - Ceramic still life: https://unsplash.com/photos/Rzwc4pyNYP8
 - Green kitchen: https://unsplash.com/photos/qkGabQMHfNA

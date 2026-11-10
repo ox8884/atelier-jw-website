@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Atelier JW LLC is a family company in Celina, Texas, founded in August 2026 by Yoonjae and Mulgyeol Heo. We are building Forge Kitchen and a bakery café.">
-  <meta name="theme-color" content="#f3eee4">
+  <meta name="theme-color" content="#f8f6f3">
   <meta property="og:title" content="Atelier JW LLC | Celina, Texas">
   <meta property="og:description" content="A family company in Celina, Texas. Forge Kitchen kitchen goods in development; a bakery and café next.">
   <meta property="og:type" content="website">
@@ -12,13 +12,12 @@
   <meta property="og:image" content="https://atelier-jw.com/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="A long table set with linen, stoneware bowls, and a shared meal in soft daylight">
+  <meta property="og:image:alt" content="A long wooden table set with a fruit tart, small cakes, a cast-iron teapot and coffee in afternoon light">
   <link rel="canonical" href="https://atelier-jw.com">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f3d30'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='%23f3eee4' font-size='24' font-style='italic' font-family='Georgia,serif'%3EJW%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23394718'/%3E%3Ctext x='32' y='42' text-anchor='middle' fill='%23f7f5ec' font-size='26' font-family='Georgia,serif'%3EJW%3C/text%3E%3C/svg%3E">
   <title>Atelier JW LLC | Kitchen & Bakery Company in Celina, Texas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
+  <link rel="preload" href="assets/fonts/castoro.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/red-hat-text.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>
     (function () {
@@ -26,10 +25,7 @@
       try { t = localStorage.getItem('theme'); } catch (e) {}
       if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.dataset.theme = t;
-      document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#121210' : '#f3eee4';
-      var l = document.createElement('link');
-      l.rel = 'preload'; l.as = 'image'; l.fetchPriority = 'high'; l.href = t === 'dark' ? 'assets/photo-hero-dark.webp' : 'assets/photo-hero-light.webp';
-      document.head.appendChild(l);
+      document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#191410' : '#f8f6f3';
     })();
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Atelier JW LLC","legalName":"Atelier JW LLC","alternateName":"Atelier JW","url":"https://atelier-jw.com","email":"jayheo@atelier-jw.com","description":"Atelier JW LLC is a family company in Celina, Texas, founded in August 2026 by Yoonjae and Mulgyeol Heo. We are building Forge Kitchen and a bakery café.","foundingDate":"2026-08","foundingLocation":{"@type":"Place","name":"Celina, Texas"},"address":{"@type":"PostalAddress","addressLocality":"Celina","addressRegion":"TX","addressCountry":"US"},"brand":[{"@type":"Brand","name":"Forge Kitchen"}],"founder":[{"@type":"Person","name":"Yoonjae Heo","alternateName":"Jay","jobTitle":"Co-founder"},{"@type":"Person","name":"Mulgyeol Heo","alternateName":"Wave","jobTitle":"Co-founder"}]}</script>
@@ -38,125 +34,205 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="logo" href="/">Atelier <em>JW</em></a>
-    <nav class="desktop-nav" aria-label="Primary">
-      <a href="#company">Company</a>
-      <a href="#brands">Brands</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <div class="wrap header-row">
+      <a class="brand" href="/" aria-label="Atelier JW, home">
+        <svg class="brand-mark" viewBox="0 0 76 52" aria-hidden="true">
+          <path class="stem" d="M4 49C22 43 46 30 72 4"/>
+          <path d="M14 45c-1-7 3-12 10-13 1 7-3 12-10 13z"/>
+          <path d="M27 38c-2-7 2-13 9-15 2 7-2 13-9 15z"/>
+          <path d="M40 30c-2-7 1-13 8-16 2 7-1 13-8 16z"/>
+          <path d="M53 20c-2-6 1-12 7-15 2 6-1 12-7 15z"/>
+          <path d="M19 42c6-5 13-5 18-1-6 5-13 5-18 1z"/>
+          <path d="M33 34c6-5 13-6 19-2-6 5-13 6-19 2z"/>
+          <path d="M47 25c5-5 12-7 18-4-5 5-12 7-18 4z"/>
+        </svg>
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-name">Atelier JW</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#company">Company</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="header-divider" aria-hidden="true"></span>
+      <button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 3.5v2.2m0 12.6v2.2M5.99 5.99l1.56 1.56m8.9 8.9 1.56 1.56M3.5 12h2.2m12.6 0h2.2M5.99 18.01l1.56-1.56m8.9-8.9 1.56-1.56"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.2A7.6 7.6 0 0 1 9.8 4.5a7.6 7.6 0 1 0 9.7 9.7z"/></svg>
       </button>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
     </div>
   </header>
-  <nav id="mobile-menu" class="mobile-menu" hidden>
-    <a href="#company">Company</a>
-    <a href="#brands">Brands</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
   <main id="main">
     <section class="hero">
-      <p class="hero-meta reveal"><span>Celina, Texas</span><span>Family company</span><span>Founded by Jay &amp; Wave</span></p>
-      <h1 class="hero-title reveal">
-        <span>Made with care,</span>
-        <span class="indent"><em>built</em> for</span>
-        <span>gathering.</span>
-      </h1>
-      <div class="hero-foot reveal">
-        <p class="lede">We are Jay and Wave. Forge Kitchen is our first brand. The next chapter is bread, coffee, and a place to gather.</p>
-        <a class="round-link" href="#company" aria-label="Scroll to the company section">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
-        </a>
+      <div class="wrap">
+        <h1>Two people, building for the table.</h1>
+        <div class="hero-intro">
+          <p class="lede">Atelier JW is the family company of Jay and Wave Heo in Celina, Texas, founded August 2026. We’re building lasting brands for everyday life at the table, starting with Forge Kitchen, a line of kitchen and tabletop goods in development, and next, a bakery and café.</p>
+          <span class="intro-rule" aria-hidden="true"></span>
+          <!--email_off--><a class="cta" href="mailto:jayheo@atelier-jw.com">
+            <svg viewBox="0 0 40 30" aria-hidden="true"><rect x="1.5" y="1.5" width="37" height="27" rx="3"/><path d="m2.5 3 17.5 14L37.5 3M2.5 27l12.5-11m22.500 11L25 16"/></svg>
+            Email Jay
+          </a><!--/email_off-->
+        </div>
+
+        <ul class="chapters">
+          <li class="chapter">
+            <a href="#bakery">
+              <picture>
+                <source srcset="assets/photo-desserts.webp" type="image/webp">
+                <img src="assets/plates/photo-desserts.png" alt="Three tigré cakes with glossy chocolate centres beside a berry tart on a wooden counter" width="1200" height="800" fetchpriority="high">
+              </picture>
+              <span class="chapter-caption">Cakes, tarts, tigrés · soon</span>
+            </a>
+          </li>
+          <li class="chapter">
+            <a href="#forge">
+              <picture>
+                <source srcset="assets/photo-pot.webp" type="image/webp">
+                <img src="assets/plates/photo-pot.png" alt="A black cast-iron pot with a brass knob on a wooden counter beside a striped linen towel" width="1200" height="800">
+              </picture>
+              <span class="chapter-caption">Forge Kitchen · in development</span>
+            </a>
+          </li>
+          <li class="chapter">
+            <a href="#bakery">
+              <picture>
+                <source srcset="assets/photo-cafe.webp" type="image/webp">
+                <img src="assets/plates/photo-cafe.png" alt="A slice of layered cream cake and a latte on a small marble café table by a window" width="1200" height="800">
+              </picture>
+              <span class="chapter-caption">Bakery + café · next</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="facts">
+          <li>Founded August 2026</li>
+          <li>Celina, Texas</li>
+          <li>Atelier JW LLC</li>
+        </ul>
       </div>
-      <figure class="hero-media reveal">
-        <img class="img-light" src="assets/photo-hero-light.webp" alt="A long table set with linen, stoneware bowls, and a shared meal in soft daylight" width="2400" height="1600" loading="lazy" fetchpriority="high">
-        <img class="img-dark" src="assets/photo-hero-dark.webp" alt="A long dinner table set with white plates and glowing candles" width="2400" height="1600" loading="lazy" fetchpriority="high">
-      </figure>
     </section>
+
+    <div id="brands">
+      <section class="brand-section" id="forge">
+        <div class="band">
+          <div class="wrap band-row">
+            <h2 class="band-title">Forge Kitchen</h2>
+            <span class="band-rule" aria-hidden="true"></span>
+            <p class="band-text">Our first brand. Forge Kitchen is a line of kitchen and tabletop goods in development: simple, durable pieces for cooking, baking, and gathering at home.</p>
+          </div>
+          <picture class="band-linen">
+            <source srcset="assets/forge-linen.webp" type="image/webp">
+            <img src="assets/plates/forge-linen.png" alt="" width="1200" height="800">
+          </picture>
+        </div>
+        <div class="wrap brand-body brand-body-forge">
+          <figure class="brand-photo">
+            <picture class="reveal-photo">
+              <source srcset="assets/photo-forge.webp" type="image/webp">
+              <img src="assets/photo-forge.webp" alt="A cast-iron skillet and pot, a wooden board, a bowl of salt and a striped linen towel on a worn wooden counter" width="1536" height="1024" loading="lazy">
+            </picture>
+            <figcaption>Illustrative image. Forge Kitchen pieces are still in development.</figcaption>
+          </figure>
+          <div class="brand-notes">
+            <p class="brand-line">Made for real daily use, and worth keeping on the counter.</p>
+            <dl class="ledger">
+              <div><dt>Status</dt><dd>In development</dd></div>
+              <div><dt>Makes</dt><dd>Kitchen and tabletop goods</dd></div>
+              <div><dt>Shaped by</dt><dd>Jay’s restaurant experience</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="brand-section" id="bakery">
+        <div class="band">
+          <div class="wrap band-row">
+            <h2 class="band-title">Bakery + Café</h2>
+            <span class="band-rule" aria-hidden="true"></span>
+            <p class="band-text">The next chapter. A neighborhood place we are working toward, for cakes, tarts, and tigrés with good coffee beside them.</p>
+          </div>
+        </div>
+        <div class="wrap brand-body brand-body-bakery">
+          <div class="brand-notes">
+            <p class="brand-line">Korean sensibility, Texas hospitality.</p>
+            <dl class="ledger">
+              <div><dt>Status</dt><dd>Coming soon</dd></div>
+              <div><dt>On the counter</dt><dd>Cakes, tarts, tigrés, coffee</dd></div>
+              <div><dt>Shaped by</dt><dd>Wave’s love of baking</dd></div>
+            </dl>
+          </div>
+          <figure class="brand-photo brand-photo-tall">
+            <picture class="reveal-photo">
+              <source srcset="assets/photo-bakery.webp" type="image/webp">
+              <img src="assets/photo-bakery.webp" alt="A layered cream cake on a stand, berry tarts on marble and a tray of tigré cakes by a window" width="960" height="1440" loading="lazy">
+            </picture>
+          </figure>
+          <figure class="brand-photo brand-photo-tall brand-photo-drop">
+            <picture class="reveal-photo">
+              <source srcset="assets/photo-cafe-corner.webp" type="image/webp">
+              <img src="assets/photo-cafe-corner.webp" alt="A quiet café corner with round marble tables, bentwood chairs and a slice of cake with coffee" width="960" height="1440" loading="lazy">
+            </picture>
+            <figcaption>Illustrative image. The café is not open yet.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
 
     <section class="company" id="company">
-      <p class="label reveal"><span>01</span>The company</p>
-      <div class="company-body">
-        <h2 class="statement reveal">One studio, <em>two chapters.</em> A small family company making daily life feel a little better.</h2>
-        <div class="company-text reveal">
-          <p>Atelier JW LLC is a family company founded in August 2026 in Celina, Texas, by Yoonjae (Jay) Heo and Mulgyeol (Wave) Heo. Jay’s restaurant experience shapes our first brand, Forge Kitchen: practical kitchen and tabletop goods, now in development. Wave’s love of baking points toward a future bakery and café.</p>
-          <ul class="founders" aria-label="Founders">
-            <li><span class="founder-name">Yoonjae (Jay) Heo</span> <span class="founder-role">Co-founder</span></li>
-            <li><span class="founder-name">Mulgyeol (Wave) Heo</span> <span class="founder-role">Co-founder</span></li>
-          </ul>
-          <p class="aside">The work is practical. The feeling should still be warm.</p>
+      <div class="wrap">
+        <div class="company-head">
+          <h2>A small family company, making daily life at the table a little better.</h2>
+          <p>Atelier JW LLC is a family company founded in August 2026 in Celina, Texas, by Yoonjae (Jay) Heo and Mulgyeol (Wave) Heo. The work is practical. The feeling should still be warm.</p>
         </div>
-      </div>
-      <dl class="facts reveal">
-        <div><dt>Founded</dt><dd>August 2026</dd></div>
-        <div><dt>Based in</dt><dd>Celina, Texas</dd></div>
-        <div><dt>First brand</dt><dd>Forge Kitchen</dd></div>
-        <div><dt>Next</dt><dd>Bakery + Café</dd></div>
-      </dl>
-    </section>
-
-    <section class="brands" id="brands">
-      <p class="label reveal"><span>02</span>Brands</p>
-      <h2 class="section-title reveal">What we are <em>building</em></h2>
-      <div class="brand-grid">
-        <article class="brand-card reveal">
-          <div class="brand-media">
-            <img class="img-light" src="assets/photo-kitchen-light.webp" alt="Stacked cream stoneware bowls on a wooden shelf" width="1400" height="2100" loading="lazy">
-            <img class="img-dark" src="assets/photo-kitchen-dark.webp" alt="A black cast-iron dutch oven on a stovetop" width="1400" height="2100" loading="lazy">
-            <span class="chip">First brand</span>
-          </div>
-          <div class="brand-copy">
-            <h3>Forge Kitchen</h3>
-            <p>Kitchen and tabletop goods made for real daily use. Simple, durable, and worth keeping on the counter.</p>
-            <span class="brand-cta muted">Launching soon</span>
-          </div>
-        </article>
-        <article class="brand-card reveal">
-          <div class="brand-media">
-            <img class="img-light" src="assets/photo-bakery-light.webp" alt="Madeleines in a parchment-lined rattan basket on white marble" width="1000" height="1600" loading="lazy">
-            <img class="img-dark" src="assets/photo-bakery-dark.webp" alt="Fruit tartlets with berries and kiwi on black slate" width="1000" height="1250" loading="lazy">
-            <span class="chip">Next chapter</span>
-          </div>
-          <div class="brand-copy">
-            <h3>Bakery + Café</h3>
-            <p>Bread, coffee, Korean sensibility, and Texas hospitality. A neighborhood place we are working toward.</p>
-            <span class="brand-cta muted">Coming soon</span>
-          </div>
-        </article>
+        <ul class="founders" aria-label="Founders">
+          <li>
+            <span class="founder-name">Yoonjae (Jay) Heo</span>
+            <span class="founder-role">Co-founder</span>
+            <span class="founder-note">Jay’s restaurant experience shapes Forge Kitchen.</span>
+          </li>
+          <li>
+            <span class="founder-name">Mulgyeol (Wave) Heo</span>
+            <span class="founder-role">Co-founder</span>
+            <span class="founder-note">Wave’s love of baking points toward the bakery and café.</span>
+          </li>
+        </ul>
+        <dl class="ledger ledger-wide">
+          <div><dt>Legal name</dt><dd>Atelier JW LLC, a Texas limited liability company</dd></div>
+          <div><dt>Founded</dt><dd>August 2026</dd></div>
+          <div><dt>Based in</dt><dd>Celina, Texas, USA</dd></div>
+          <div><dt>First brand</dt><dd>Forge Kitchen</dd></div>
+          <div><dt>Next</dt><dd>Bakery + Café</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="gather">
-      <figure class="gather-media reveal">
-        <img class="img-light" src="assets/photo-gather-light.webp" alt="A cappuccino on a small marble café table by a sunny window, rattan chairs behind" width="1000" height="1500" loading="lazy">
-        <img class="img-dark" src="assets/photo-gather-dark.webp" alt="A glazed stoneware coffee cup on a dark saucer, caught in a single shaft of light" width="1000" height="1500" loading="lazy">
-      </figure>
-      <blockquote class="gather-quote reveal">
-        <p>“Bread, coffee, and a place to <em>gather.</em>”</p>
-        <cite>The next chapter</cite>
-      </blockquote>
-    </section>
+    <figure class="table-photo">
+      <picture class="reveal-photo">
+        <source srcset="assets/photo-table.webp" type="image/webp">
+        <img src="assets/photo-table.webp" alt="A long wooden table set with a fruit tart, small cakes, a cast-iron teapot and cups of coffee in afternoon light" width="1536" height="1024" loading="lazy">
+      </picture>
+    </figure>
 
     <section class="contact" id="contact">
-      <p class="label reveal"><span>03</span>Contact</p>
-      <h2 class="contact-title reveal">Talk <em>with us.</em></h2>
-      <p class="contact-text reveal">For Forge Kitchen, partnerships, or the bakery project, email Jay.</p>
-      <!--email_off--><a class="contact-mail reveal" href="mailto:jayheo@atelier-jw.com">jayheo@atelier-jw.com <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><!--/email_off-->
-      <address class="contact-legal reveal">Atelier JW LLC<br>Celina, Texas, USA</address>
+      <div class="wrap contact-row">
+        <h2>Write to Jay.</h2>
+        <div class="contact-body">
+          <p>For Forge Kitchen, partnerships, or the bakery project, email Jay.</p>
+          <!--email_off--><a class="contact-mail" href="mailto:jayheo@atelier-jw.com">jayheo@atelier-jw.com <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><!--/email_off-->
+          <address>Atelier JW LLC<br>Celina, Texas, USA</address>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p class="footer-mark" aria-hidden="true">Atelier <em>JW</em></p>
-    <div class="footer-row">
+    <div class="wrap footer-row">
       <span>© <span id="year">2026</span> Atelier JW LLC. A Texas limited liability company.</span>
       <span>Celina, Texas</span>
       <!--email_off--><a href="mailto:jayheo@atelier-jw.com">jayheo@atelier-jw.com</a><!--/email_off-->
     </div>
+    <p class="wrap footer-note">Photography is illustrative. Forge Kitchen products and the café are still in the making.</p>
   </footer>
   <script src="script.js"></script>
 </body>

@@ -53,10 +53,10 @@ The script creates a temporary directory containing only these public files:
 - robots.txt
 - sitemap.xml
 - _headers
-- the `PUBLIC_ASSETS` photos and `og-image.jpg`
+- the `PUBLIC_ASSETS` photos, their PNG fallbacks in `assets/plates/`, the fonts in `assets/fonts/`, and `og-image.jpg`
 - `styles.css` and `script.js`, published as `assets/styles.<hash>.css` and `assets/script.<hash>.js`
 
-Assets (including the stylesheet and script) are published under content-hashed names (`photo-hero-light.18cd83f4.webp`) and the deployed `index.html` is rewritten to match, because `/assets/*` is cached as immutable for a year. Replace a photo in place under the same source name; the next deploy gives it a new URL. The script refuses to deploy if `index.html` references an asset that is not in the allowlist.
+Assets (including the stylesheet and script) are published under content-hashed names (`photo-pot.f705869a.webp`) and the deployed `index.html` and stylesheet are rewritten to match, because `/assets/*` is cached as immutable for a year. Replace a photo in place under the same source name; the next deploy gives it a new URL. The script refuses to deploy if `index.html` or `styles.css` references an asset that is not in the allowlist. In `styles.css`, write asset paths from the repository root (`assets/fonts/castoro.woff2`); the script shortens them because the published stylesheet lives inside `assets/`.
 
 Preview what would be uploaded without deploying:
 

@@ -10,3 +10,6 @@ Thumbs.db
 
 # Node (wrangler for deploys)
 node_modules/
+
+# Impeccable local build state (mocks, review captures and questions ignore themselves)
+.impeccable/build/

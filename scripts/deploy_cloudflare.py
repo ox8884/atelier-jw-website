@@ -21,20 +21,29 @@ HASHED_ROOT_FILES = ["styles.css", "script.js"]
 # Replacing a photo in place is therefore safe: its published name changes.
 PUBLIC_ASSETS = [
     "og-image.jpg",
-    "photo-hero-light.webp",
-    "photo-hero-dark.webp",
-    "photo-kitchen-light.webp",
-    "photo-kitchen-dark.webp",
-    "photo-gather-light.webp",
-    "photo-gather-dark.webp",
-    "photo-bakery-light.webp",
-    "photo-bakery-dark.webp",
+    "photo-desserts.webp",
+    "photo-pot.webp",
+    "photo-cafe.webp",
+    "forge-linen.webp",
+    "photo-forge.webp",
+    "photo-bakery.webp",
+    "photo-cafe-corner.webp",
+    "photo-table.webp",
+    # PNG fallbacks behind the <picture> webp sources.
+    "plates/photo-desserts.png",
+    "plates/photo-pot.png",
+    "plates/photo-cafe.png",
+    "plates/forge-linen.png",
+    "fonts/castoro.woff2",
+    "fonts/castoro-italic.woff2",
+    "fonts/red-hat-text.woff2",
 ]
 
 
-def hashed_name(path: Path) -> str:
-    digest = hashlib.sha256(path.read_bytes()).hexdigest()[:8]
-    stem, _, ext = path.name.rpartition(".")
+def hashed_name(name: str, data: bytes) -> str:
+    """photo.webp -> photo.1a2b3c4d.webp; keeps a leading folder (fonts/x.woff2)."""
+    digest = hashlib.sha256(data).hexdigest()[:8]
+    stem, _, ext = name.rpartition(".")
     return f"{stem}.{digest}.{ext}"
 
 
@@ -73,17 +82,24 @@ def main() -> None:
         assets = out / "assets"
         assets.mkdir()
         html = (ROOT / "index.html").read_text(encoding="utf-8")
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
         for name in PUBLIC_ASSETS:
-            published = hashed_name(ROOT / "assets" / name)
+            published = hashed_name(name, (ROOT / "assets" / name).read_bytes())
+            (assets / published).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / "assets" / name, assets / published)
             html = html.replace(f"assets/{name}", f"assets/{published}")
+            # The stylesheet is published inside assets/, so its paths lose the folder.
+            css = css.replace(f"assets/{name}", published)
+        if "assets/" in css:
+            raise SystemExit("styles.css references an asset that is not in PUBLIC_ASSETS")
         for name in HASHED_ROOT_FILES:
-            published = hashed_name(ROOT / name)
-            shutil.copy2(ROOT / name, assets / published)
+            data = css.encode("utf-8") if name == "styles.css" else (ROOT / name).read_bytes()
+            published = hashed_name(name, data)
+            (assets / published).write_bytes(data)
             if html.count(f'"{name}"') != 1:
                 raise SystemExit(f"Expected exactly one reference to {name} in index.html")
             html = html.replace(f'"{name}"', f'"assets/{published}"')
-        broken = [ref for ref in re.findall(r"assets/[\w.-]+", html) if not (out / ref).is_file()]
+        broken = [ref for ref in re.findall(r"assets/[\w./-]+", html) if not (out / ref).is_file()]
         if broken:
             raise SystemExit(f"index.html references unpublished assets: {', '.join(sorted(set(broken)))}")
         (out / "index.html").write_text(html, encoding="utf-8")

@@ -1,0 +1,18 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-10T07:05:42.754Z",
+        "reason": "agent triage: false positive. Paddings are calc(N * var(--u)) with --u = min(100vw / 1536, 1px), which the static check cannot resolve; the finish reviewer measured them in the 1440px capture (.band 27/43px, .ledger rows 15px, .company 105px, .contact 97/105px)."
+      }
+    ]
+  }
+}
