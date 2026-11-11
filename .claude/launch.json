@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765"],
+      "port": 8765
+    },
+    {
+      "name": "candidates",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "C:/Users/hyj53/AppData/Local/Temp/claude/C--Users-hyj53-Documents-atelier-jw-site/c3091abc-eae4-4d27-addd-215a81eeb997/scratchpad"],
+      "port": 8766
+    }
+  ]
+}
