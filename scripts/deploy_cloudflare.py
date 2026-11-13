@@ -24,7 +24,6 @@ PUBLIC_ASSETS = [
     "photo-desserts.webp",
     "photo-pot.webp",
     "photo-cafe.webp",
-    "forge-linen.webp",
     "photo-forge.webp",
     "photo-bakery.webp",
     "photo-cafe-corner.webp",
@@ -33,9 +32,7 @@ PUBLIC_ASSETS = [
     "plates/photo-desserts.png",
     "plates/photo-pot.png",
     "plates/photo-cafe.png",
-    "plates/forge-linen.png",
     "fonts/castoro.woff2",
-    "fonts/castoro-italic.woff2",
     "fonts/red-hat-text.woff2",
 ]
 

@@ -13,20 +13,20 @@ Audience and job: anyone looking the company up, cold, in one visit (marketplace
 
 Constraints: static HTML/CSS/JS; assets must be in the deploy allowlist; English; light and dark themes; company facts verbatim; email stays crawlable; imagery is AI-generated mood, never presented as a real product or location.
 
-Approved comp: `.impeccable/mocks/comp-wall-2.png`: option C, chosen by the owner on 2026-11-10 over the white-and-sage and full-bleed-photo options, with the café-side photographs changed to cakes, tarts and tigré at the owner's request the same day. Not to be literalized: the comp's leaf mark detail, the exact photo contents, and its body copy wording below the first viewport.
+Approved comp: `.impeccable/mocks/comp-wall-2.png`: option C, chosen by the owner on 2026-11-10 over the white-and-sage and full-bleed-photo options, with the café-side photographs changed to cakes, tarts and tigré at the owner's request the same day. On 2026-11-12 the owner asked for the machine-made look to be taken out; the page was rebuilt inside the same world and no longer follows the comp's layout. What survives from the comp: a large headline with the three photographs in the first screen, the palette and the two typefaces.
 
 Unresolved: none.
 
 ## Direction contract
 
-THESIS: One sentence across the full width, then three photographs that show the company's chapters at a glance: cakes and tarts, the kitchen brand, the café. It refuses the split hero of copy on one side and a single photograph on the other.
+THESIS: The company's plan in order. The headline says kitchen goods first, then a bakery and café, and the first screen repeats it: the cast-iron pot large, the two bakery prints small. One grid of four columns runs the whole page and its middle line is the only axis.
 
-OWN-WORLD: A warm artisan bakery. Flour-white ground; espresso brown for headlines and text; one deep olive that belongs to the action; warm hairline rules. A refined old-style serif for headlines, its italic for photo captions, a quiet humanist sans for reading. Square-cornered photographs in soft window light: cakes, tarts and tigré, linen, wood, cast iron, marble. Linen with an olive stripe returns as the page's one material.
+OWN-WORLD: A warm artisan bakery. Flour-white ground; espresso brown for headlines; olive only where something can be clicked or focused. A refined old-style serif for headlines, the intro and the email address, a quiet humanist sans for reading. Square-cornered photographs in soft window light: cakes, tarts and tigré, linen, wood, cast iron, marble. Sections are separated by space; two hairlines mark Company and Contact.
 
 STORY: The visitor reads who (Jay and Wave Heo, Celina, Texas, August 2026), sees what (Forge Kitchen in development, a bakery and café next), believes the company is real and has taste, and emails Jay.
 
-FIRST VIEWPORT: Top bar on a hairline: mark and "Atelier JW" left; Company, Brands, Contact and the theme switch right. The headline "Two people, building for the table." on one line at full width. Under it, a four-line paragraph on the left, a vertical hairline, and the olive "Email Jay" button on the right. Then three equal photographs in a row with centred italic captions, and a ruled row of three facts.
+FIRST VIEWPORT: Wordmark left; Forge Kitchen, Bakery, Company, Contact and a round theme switch right. The headline "Kitchen goods first, then a bakery and café." on two lines. Under it the pot photograph fills the left half; in the right half the serif intro with the email link hangs from the top edge and the tigré and cake photographs sit on the bottom edge. One small note under the pot says the photographs are illustrative.
 
-FORM: The category standard, chosen by the owner over the rolled direction; seed:bcbf535c5ff1d87a.
+FORM: Rebuilt on 2026-11-12 from a two-candidate bakeoff; the base was the candidate organised around one plan and one axis, with the chapter photographs carried over from the other. Original seed:bcbf535c5ff1d87a.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

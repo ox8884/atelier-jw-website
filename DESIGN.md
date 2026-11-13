@@ -3,185 +3,101 @@ name: Atelier JW
 description: One-page company site for a two-person family company in Celina, Texas, drawn as a warm artisan bakery in window light.
 colors:
   olive: "#394718"
-  olive-deep: "#2b3611"
   on-olive: "#f7f5ec"
-  on-olive-soft: "#d9dcc4"
   espresso: "#3b1c09"
   ink: "#1d1612"
   ink-soft: "#5c5047"
   flour: "#f8f6f3"
-  band: "#f5ece5"
-  switch: "#efeee6"
+  paper: "#efe8df"
   rule: "#ddd5cd"
-  rule-strong: "#8f8279"
   olive-dark: "#b9c67c"
-  olive-deep-dark: "#cad692"
   on-olive-dark: "#1b2106"
-  on-olive-soft-dark: "#3a431c"
   espresso-dark: "#f6ecdf"
   ink-dark: "#f1e8dc"
   ink-soft-dark: "#c5b8a9"
   flour-dark: "#191410"
-  band-dark: "#221b15"
-  switch-dark: "#2b241d"
+  paper-dark: "#221b15"
   rule-dark: "#3d3229"
-  rule-strong-dark: "#7d6e60"
-  contact-band-dark: "#2b3611"
-  on-contact-dark: "#f1eedc"
-  on-contact-soft-dark: "#c4c9a4"
 typography:
   display:
     fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "95px"
+    fontSize: "clamp(2.75rem, 1rem + 5vw, 5.25rem)"
     fontWeight: 400
-    lineHeight: 1.14
+    lineHeight: 1.03
     letterSpacing: "-0.022em"
-  contact-title:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "96px"
-    fontWeight: 400
-    lineHeight: 0.98
-    letterSpacing: "-0.025em"
-  band-title:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "71px"
-    fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.02em"
-  headline:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "60px"
-    fontWeight: 400
-    lineHeight: 1.08
-    letterSpacing: "-0.02em"
   mail:
     fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "46px"
+    fontSize: "clamp(1.75rem, 1rem + 2.6vw, 3.25rem)"
     fontWeight: 400
     lineHeight: 1.15
-  brand:
+  headline:
     fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "40.5px"
+    fontSize: "clamp(2rem, 1.5rem + 1.3vw, 2.625rem)"
     fontWeight: 400
-    lineHeight: 1
+    lineHeight: 1.08
     letterSpacing: "-0.015em"
-  title:
+  wordmark:
     fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "40px"
-    fontWeight: 400
-    lineHeight: 1.1
-    letterSpacing: "-0.01em"
-  cta:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "37px"
+    fontSize: "1.625rem"
     fontWeight: 400
     lineHeight: 1
-  line:
+  intro:
     fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "34px"
+    fontSize: "clamp(1.25rem, 0.5rem + 1.3vw, 1.625rem)"
     fontWeight: 400
-    lineHeight: 1.22
-  value:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "clamp(1.25rem, 28px, 1.75rem)"
-    fontWeight: 400
-    lineHeight: 1.25
-  caption:
-    fontFamily: "Castoro, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif"
-    fontSize: "27px"
-    fontWeight: 400
-    lineHeight: 1.4
-  lede:
-    fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "26px"
-    fontWeight: 400
-    lineHeight: 1.285
-  facts:
-    fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "25.3px"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0.012em"
-  band-text:
-    fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "23px"
-    fontWeight: 400
-    lineHeight: 1.26
-    letterSpacing: "0.01em"
-  nav:
-    fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "22.5px"
-    fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.35
   body:
     fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "clamp(1rem, 21px, 1.3125rem)"
+    fontSize: "clamp(1rem, 0.94rem + 0.25vw, 1.125rem)"
     fontWeight: 400
-    lineHeight: 1.5
-  label:
+    lineHeight: 1.55
+  caption:
     fontFamily: "'Red Hat Text', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
-    fontSize: "clamp(0.875rem, 16px, 1rem)"
+    fontSize: "0.875rem"
     fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0.02em"
+    lineHeight: 1.55
 rounded:
   none: "0"
-  focus: "2px"
-  button: "7px"
-  pill: "999px"
+  circle: "50%"
 spacing:
-  gap: "17px"
-  pad: "44px"
-  section: "112px"
+  pad: "clamp(20px, 4vw, 56px)"
+  gap: "clamp(14px, 1.5vw, 24px)"
+  space: "clamp(80px, 10vw, 144px)"
 components:
-  button-primary:
-    backgroundColor: "{colors.olive}"
-    textColor: "{colors.on-olive}"
-    typography: "{typography.cta}"
-    rounded: "{rounded.button}"
-    width: "374px"
-    height: "78px"
-  button-primary-hover:
-    backgroundColor: "{colors.olive-deep}"
-    textColor: "{colors.on-olive}"
-  theme-switch:
-    backgroundColor: "{colors.switch}"
-    textColor: "{colors.olive}"
-    rounded: "{rounded.pill}"
-    width: "96px"
-    height: "40px"
-  theme-switch-knob:
-    backgroundColor: "{colors.olive}"
-    textColor: "{colors.on-olive}"
-    rounded: "{rounded.pill}"
-    width: "50px"
-    height: "32px"
+  wordmark:
+    textColor: "{colors.espresso}"
+    typography: "{typography.wordmark}"
   nav-link:
     textColor: "{colors.ink}"
-    typography: "{typography.nav}"
-  chapter-caption:
+    typography: "{typography.body}"
+    padding: "10px 0"
+  theme-switch:
     textColor: "{colors.espresso}"
-    typography: "{typography.caption}"
-  brand-band:
-    backgroundColor: "{colors.band}"
-    textColor: "{colors.espresso}"
-    typography: "{typography.band-title}"
-    padding: "20px 44px 36px"
-  ledger-label:
+    rounded: "{rounded.circle}"
+    width: "44px"
+    height: "44px"
+  text-link:
+    textColor: "{colors.olive}"
+    typography: "{typography.intro}"
+  mail-link:
+    textColor: "{colors.olive}"
+    typography: "{typography.mail}"
+  print:
+    backgroundColor: "{colors.paper}"
+    rounded: "{rounded.none}"
+  caption-note:
     textColor: "{colors.ink-soft}"
-    typography: "{typography.label}"
-  ledger-value:
+    typography: "{typography.caption}"
+  entry-heading:
     textColor: "{colors.espresso}"
-    typography: "{typography.value}"
-    padding: "16px 0"
-  contact-band:
+    typography: "{typography.headline}"
+  entry-statement:
+    textColor: "{colors.espresso}"
+    typography: "{typography.intro}"
+  skip-link:
     backgroundColor: "{colors.olive}"
     textColor: "{colors.on-olive}"
-    typography: "{typography.contact-title}"
-    padding: "104px 44px 112px"
-  contact-mail:
-    textColor: "{colors.on-olive}"
-    typography: "{typography.mail}"
+    padding: "10px 16px"
 ---
 
 # Design System: Atelier JW
@@ -190,18 +106,19 @@ components:
 
 **Creative North Star: "The Window-Lit Counter"**
 
-The site is a bakery counter seen in soft window light: a flour-white ground, espresso-brown lettering, warm hairlines, and photographs of cakes, cast iron, linen and marble hung like prints with square corners. It is a familiar, clean, premium-homeware arrangement, chosen over louder graphic directions; the craft sits in proportion, type and light, not in ornament.
+The site is a bakery counter seen in soft window light: a flour-white ground, espresso-brown lettering, and photographs of cast iron, cakes, linen and marble hung like prints with square corners. It is a familiar, clean, premium-homeware arrangement, chosen over louder graphic directions; the craft sits in proportion, type and light, not in ornament.
 
-Density is generous and calm. One sentence spans the full width, three equal photographs follow it, and every later section is a ruled, two-voice composition: a Castoro headline or italic line against Red Hat Text reading copy. Facts are set as ledgers on hairlines because the company has facts, not products, to show.
+The page carries one idea, the company's plan in order, and the layout repeats it. The headline says kitchen goods first, then a bakery and café; under it the cast-iron pot fills the left half and the cakes and the café table sit on the right half, and the chapters row sets Forge Kitchen and the bakery and café in the same two halves. Everything hangs from one grid of four equal columns whose middle line is the page's single axis. Density is generous and calm: sections are separated by space, and the only rules on the page are the two hairlines above Company and Contact.
 
-The system is authored twice. Light is flour and espresso; dark is a roasted brown ground with cream lettering, and olive flips from a deep field to a pale one so the action keeps its contrast. Photographs are AI-generated illustrations of mood and material and are labelled as illustrative wherever they could be read as product or place.
+The system is authored twice. Light is flour and espresso; dark is a roasted brown ground with cream lettering, and olive turns from deep to pale so links keep their contrast. Photographs are AI-generated illustrations of mood and material and are labelled as illustrative.
 
 **Key Characteristics:**
-- Flour ground, espresso headlines, one olive that belongs to the action and the closing band.
-- Castoro for everything that is said aloud (headlines, italic captions, values); Red Hat Text for everything that is read.
-- Square-cornered photographs; the only curves are the button (7px) and the pill switch.
-- Flat: no shadows anywhere. Depth is tone and hairline.
-- One proportional unit above 960px: the whole 1536px composition scales down together.
+- Flour ground, espresso headings, and one olive that belongs to links and focus.
+- Castoro for what the company says; Red Hat Text for what is read.
+- One four-column grid: headings and text start at the left margin or at the middle line.
+- Space separates sections; two hairlines are the only rules.
+- Square-cornered photographs over a paper tone; the one curve is the round theme switch.
+- Flat and still: no shadows, no tinted bands, no gradients, no entrance motion.
 - Light and dark themes are both first-class.
 
 ## Colors
@@ -209,144 +126,139 @@ The system is authored twice. Light is flour and espresso; dark is a roasted bro
 A warm neutral palette lifted from flour, crust and coffee, with a single deep olive as the only chromatic voice.
 
 ### Primary
-- **Counter Olive** (`olive`, dark theme `olive-dark`): the action colour. Fills the Email button and the theme-switch knob, draws the leaf mark, the short bar under each brand title, the focus ring and text selection, and floods the closing contact band.
-- **Pressed Olive** (`olive-deep`, dark `olive-deep-dark`): hover state of the olive button only.
-- **Cream on Olive** (`on-olive`, `on-olive-soft`): text and icons on olive; the soft step is for supporting copy and the address inside the contact band.
+- **Counter Olive** (`olive`, dark theme `olive-dark`): the colour of inline text links (the email address in the intro and in the contact row), the focus ring, text selection and the skip link. Deep on flour in light, pale on the roasted ground in dark.
+- **Cream on Olive** (`on-olive`, dark `on-olive-dark`): text on olive, which means selected text and the skip link only.
 
 ### Neutral
-- **Flour** (`flour`, dark `flour-dark`): the page ground and the sticky header.
-- **Linen Band** (`band`, dark `band-dark`): the tinted strip behind each brand title.
-- **Espresso** (`espresso`, dark `espresso-dark`): all headings, italic captions, ledger values, founder names and the wordmark.
-- **Ink** (`ink`, dark `ink-dark`): reading text.
-- **Soft Ink** (`ink-soft`, dark `ink-soft-dark`): labels, figcaptions, the company aside and the footer.
-- **Hairline** (`rule`, dark `rule-dark`): horizontal rules: header, facts row, ledger rows, section top.
-- **Strong Hairline** (`rule-strong`, dark `rule-strong-dark`): vertical dividers, the rule over each founder, the scrollbar thumb.
-- **Switch Track** (`switch`, dark `switch-dark`): the theme-switch track only.
+- **Flour** (`flour`, dark `flour-dark`): the page ground, edge to edge. It is also the browser theme colour and the scrollbar track.
+- **Espresso** (`espresso`, dark `espresso-dark`): everything set in Castoro except the links: the headline, section headings, the intro, the company statement and the wordmark. Also the theme-switch icon.
+- **Ink** (`ink`, dark `ink-dark`): reading text and navigation links.
+- **Soft Ink** (`ink-soft`, dark `ink-soft-dark`): the caption note, the footer, the theme-switch outline on hover and the scrollbar thumb.
+- **Hairline** (`rule`, dark `rule-dark`): the 1px rule above the Company and Contact rows and the theme-switch outline at rest.
+- **Print Paper** (`paper`, dark `paper-dark`): the tone behind every photograph while it loads. It is never used as a visible surface.
 
 ### Named Rules
-**The Olive Is Spoken For Rule.** Olive fills only the action (the Email button, the switch knob) and the closing contact band; elsewhere it appears as a line or mark (leaf mark, title bar, focus ring), never as body text or a second coloured field.
+**The Olive Is a Link Rule.** Olive colours text that can be followed and the marks of focus: inline links, the focus ring, selection, the skip link. It is never a section field, a band, a bar or a heading colour. Navigation links and the wordmark stay ink and espresso.
 
-**The Band Stays Dark Rule.** In the dark theme olive becomes pale so the button reads on a roasted ground, but the contact band does not follow it: it stays deep olive (`contact-band-dark`) with cream text (`on-contact-dark`, `on-contact-soft-dark`). The closing band is a dark olive field in both themes.
+**The One Ground Rule.** The whole page sits on flour. There is no second surface colour; paper appears only behind a photograph that has not loaded yet.
 
-**The Dimmed Print Rule.** Photographs are never swapped per theme. In dark they are dimmed to 90% brightness, and the linen strip drops to 50% opacity.
+**The Dimmed Print Rule.** Photographs are never swapped per theme. In dark they are dimmed to 90% brightness.
 
 ## Typography
 
-**Display Font:** Castoro, regular and italic (with Iowan Old Style, Palatino Linotype, Georgia)
+**Display Font:** Castoro, regular (with Iowan Old Style, Palatino Linotype, Georgia)
 **Body Font:** Red Hat Text, variable 400 to 600, only 400 in use (with Segoe UI Variable Text, Segoe UI, system-ui)
 
-**Character:** An old-style serif with a warm, slightly inked italic, set large and tight, against a quiet humanist sans. Both are self-hosted woff2; the content security policy forbids third-party font hosts. Every style is weight 400: hierarchy comes from size, family and italic, never from bold.
+**Character:** An old-style serif with a warm, slightly inked drawing, set large and tight, against a quiet humanist sans. Both are self-hosted woff2; the content security policy forbids third-party font hosts. Every style is weight 400 and upright: hierarchy comes from size and family, never from bold.
 
-Sizes in the frontmatter are the 1536px design values. Above 960px each is multiplied by the unit `--u = min(100vw / 1536, 1px)`, so type shrinks with a narrower desktop and never grows past the design. Body, value and label carry rem floors and ceilings so reading text stays between 16px and 21px, values between 20px and 28px, labels between 14px and 16px. At 960px and below the tokens switch to the fixed or fluid values noted here.
+There are seven steps. Five are a single `clamp()` between a rem floor and a rem ceiling, so type moves with the window; the wordmark and the caption are fixed. No breakpoint changes a font size.
 
 ### Hierarchy
-- **Display** (400, 95u; `clamp(2.75rem, 11.5vw, 5rem)` at 960px and below, line-height 1.14 then 1.02, -0.022em): the single opening sentence, one line at full width on desktop.
-- **Contact title** (400, 96u; `clamp(3rem, 13vw, 5rem)`, line-height 0.98, -0.025em): the closing call on the olive band.
-- **Band title** (400, 71u; `clamp(2.5rem, 9vw, 3.5rem)`, line-height 1.02, -0.02em): brand names on the linen band.
-- **Headline** (400, 60u; `clamp(2rem, 7vw, 3rem)`, line-height 1.08, -0.02em): section statements.
-- **Mail** (400, 46u; `clamp(1.375rem, 6vw, 2.25rem)`, line-height 1.15): the email address as a link.
-- **Title** (400, 40u; 1.75rem, line-height 1.1, -0.01em): founder names. The wordmark sits beside it at 40.5u (1.625rem).
-- **CTA** (400, 37u; 1.5rem, line-height 1): the button label.
-- **Line** (italic 400, 34u; 1.625rem, line-height 1.22): one italic sentence per brand.
-- **Value** (400, 20px to 28px, line-height 1.25): the answer in a ledger row.
-- **Caption** (italic 400, 27u; 1.25rem, and `clamp(0.875rem, 1.95vw, 1.0625rem)` between 700px and 960px, line-height 1.4): centred under each chapter photograph.
-- **Lede** (400, 26u; `clamp(1.0625rem, 2.6vw, 1.25rem)`, line-height 1.285 then 1.5): the opening paragraph, capped at 940u (60ch on small screens).
-- **Facts / Band text / Nav** (400, 25.3u, 23u, 22.5u; 1rem, 1.0625rem, 1rem): the ruled fact row, the band description, header links.
-- **Body** (400, 16px to 21px, line-height 1.5): reading copy, capped at 40 to 44ch.
-- **Label** (400, 14px to 16px, 0.02em, sentence case): ledger terms, founder roles, figcaptions, footer.
+- **Display** (400, `clamp(2.75rem, 1rem + 5vw, 5.25rem)`, line-height 1.03, -0.022em): the single opening sentence, balanced over two lines on desktop and three on a phone.
+- **Mail** (400, `clamp(1.75rem, 1rem + 2.6vw, 3.25rem)`, line-height 1.15): the email address in the contact row, in olive, allowed to break anywhere so it never overflows.
+- **Headline** (400, `clamp(2rem, 1.5rem + 1.3vw, 2.625rem)`, line-height 1.08, -0.015em): the four section headings.
+- **Wordmark** (400, 1.625rem, line-height 1): "Atelier JW" in the header.
+- **Intro** (400, `clamp(1.25rem, 0.5rem + 1.3vw, 1.625rem)`, line-height 1.35): the serif paragraph in the hero, capped at 24em, and the company statement.
+- **Body** (400, `clamp(1rem, 0.94rem + 0.25vw, 1.125rem)`, line-height 1.55): reading copy, capped at 31em, and the navigation links.
+- **Caption** (400, 0.875rem, sentence case): the note under photographs and the footer, in soft ink.
 
 ### Named Rules
-**The Spoken and Read Rule.** Castoro carries what the company says in its own voice: headlines, italic lines and captions, names, ledger values, the button and the email address. Red Hat Text carries what is read: paragraphs, navigation, facts, labels.
+**The Spoken and Read Rule.** Castoro carries what the company says in its own voice: the headline, section headings, the intro, the company statement, the wordmark and the email address. Red Hat Text carries what is read: paragraphs, navigation, captions, the footer.
 
-**The One Weight Rule.** Everything is weight 400. Emphasis is a change of family, size or italic.
+**The One Weight Rule.** Everything is weight 400. Emphasis is a change of family or size.
 
-**The Italic Is a Caption Rule.** Castoro italic appears only on photo captions and the single brand line. Headlines stay upright.
+**The Fluid Ramp Rule.** A new size is one of the seven steps. A size is written once and is not restated inside a breakpoint.
 
 ## Layout
 
-The page is a single column of full-width sections inside a 1536px wrap with 44u side padding. Above 960px every dimension is written in `--u`, one pixel of the 1536px design, so a 1280px or 1440px window shows the same composition reduced, not reflowed. Section rhythm is 112u top and bottom; column gap is 17u.
+The page is one column of sections inside a wrap capped at 1520px with `pad` side padding. Inside the wrap there is one grid of four equal columns with `gap` between them. Its middle line is the page's single axis: headings and text start at the left margin or at that line, and photographs take a quarter, a half or the full width. The header and footer are not on the grid; they pin their items to the two outer margins.
 
-Sections use a 12-column grid: photograph 8 and notes 4 (Forge Kitchen); notes 4, photograph 4, photograph 4 with the last dropped 96u (Bakery + Café); headline 7 with an aside in columns 9 to 12 (Company); 6 and 6 (Contact). The hero is not on the grid: a full-width headline, then paragraph, vertical hairline and button in a row, then three equal photographs, then a ruled fact row. The sticky header is 74u tall on a hairline inset to the wrap padding.
+The headline spans the full width above the grid. In the hero, the cast-iron pot print fills the left two columns and both rows, the serif intro hangs from the top of the right half, and two small prints sit on the bottom edge of the right half, one column each. The chapters row repeats those proportions as two halves: one landscape print for Forge Kitchen on the left, two portrait prints for the bakery and café on the right inside a box of the same landscape proportion, and under each its caption note, heading and paragraph. A wide table photograph follows at the full wrap width. Company and Contact are two ruled rows, heading on the left half and content on the right half, aligned on their first baselines.
 
-Photograph proportions are fixed: 474:325 for the three chapter prints, 3:2 for a landscape, 2:3 for a portrait, 21:9 for the full-bleed table photograph (4:3 at 960px and below).
+Photograph proportions are fixed: 3:2 for every print and for the box that holds the portrait pair, 2:1 for the table photograph (3:2 at 900px and below).
 
-At 960px and below the unit system is replaced: padding `clamp(18px, 5vw, 36px)`, gap 14px, section `clamp(64px, 12vw, 96px)`. The header stops being sticky and the navigation wraps onto its own row under the wordmark, with no menu button. Grids collapse to one column, except the two portrait bakery photographs, which stay side by side. Vertical hairlines disappear; the fact row becomes ruled lines. From 700px to 960px the three chapter photographs return to a row with a 12px gap and the facts spread across one line.
+Rhythm is three fluid values. `space` opens every section: above the chapters, the table photograph, the first ruled row and the footer. The second ruled row sits closer (`clamp(48px, 5vw, 72px)`). 14px separates a heading from its paragraph and a photograph from its caption note. The header is not sticky; it scrolls away with the page.
 
-**The Shrink, Don't Reflow Rule.** Between 961px and 1536px nothing rearranges. New desktop dimensions are written as `calc(n * var(--u))`, with a rem clamp only on text small enough to become unreadable.
+There are two breakpoints. At 900px and below the hero becomes two columns (the intro first at full width, then the pot print, then the two small prints side by side), and the chapters and the ruled rows collapse to one column; the portrait pair stays side by side. At 640px and below the navigation moves to its own row under the wordmark, spread across the width, and the theme switch stays on the first row. There is no menu button at any width.
+
+### Named Rules
+**The One Axis Rule.** In the main content, a heading or a block of text starts at the left margin or at the middle line of the four-column grid, and a photograph takes a quarter, a half or the full width. No block is centred or set on a third.
+
+**The Space, Not Lines Rule.** Sections are separated by `space`. The hairlines above Company and Contact are the only dividing rules on the page; there are no vertical dividers, bands or bars.
 
 ## Elevation & Depth
 
-The system is flat. There are no box shadows, text shadows, blurs or glass layers in the build. Depth comes from three things: tone (the linen band and the olive contact band against flour), 1px hairlines, and the photographs themselves. The sticky header is an opaque flour bar with a hairline, not a floating one. The one soft edge is the linen strip at the right of the Forge Kitchen band, which fades into the band through a gradient mask.
+The system is flat. There are no box shadows, text shadows, blurs, gradients, masks or tinted surfaces in the build, and nothing overlaps. Depth comes from the photographs themselves and from the two hairlines. Only the skip link is lifted above the page, and only while it has focus.
 
 ### Named Rules
-**The No Shadow Rule.** Surfaces separate by tone or a 1px rule. A shadow would be the first one in the system.
+**The No Shadow Rule.** A shadow would be the first one in the system.
 
 ## Shapes
 
-Photographs, bands and sections have square corners (0). Curves are reserved for controls: the Email button (7u, 6px on small screens) and the pill theme switch (999px). The focus outline carries a 2px radius.
+Photographs and sections have square corners (0). The single curve is the theme switch, a 44px circle (50%) with a 1px hairline outline. The focus outline is square.
 
-Lines are 1px in two strengths: `rule` for horizontals, `rule-strong` for verticals between a title and its text. The only heavier mark is the olive bar under each brand title (112u by 6u; 72px by 4px on small screens). Icons are outline SVG with a 1.6 stroke, round caps and joins; the leaf mark is the one filled drawing.
+Lines are 1px: the two hairlines, the switch outline, and link underlines, which sit 0.22em below the baseline. The only icon is the theme-switch mark, a 20px outline circle with a 1.5 stroke and one half filled.
 
-**The Print Rule.** A photograph is a print: square corners, no border, no radius, no overlay text. Its caption sits beneath it.
+**The Print Rule.** A photograph is a print: square corners, no border, no radius, no overlay text. Its caption note sits beneath it.
 
 ## Components
 
-### Buttons
-One button exists: the olive Email action. It is confident and plain, a serif label beside an outline envelope.
-- **Shape:** softly eased corners (7u; 6px at 960px and below).
-- **Primary:** `olive` fill, `on-olive` Castoro label at the CTA size, envelope icon with a 34u gap, 374u by 78u; full width up to 420px and 60px tall on small screens.
-- **Hover / Focus:** fill moves to `olive-deep` over 0.3s and the envelope lifts 3u and tilts -4deg on the house ease; pressing drops the button 1px. Focus is a 2px olive outline offset 3px.
+### Header
+A single row at the top of the wrap: wordmark at the left, navigation and theme switch at the right, 18px above and below. It is not sticky and carries no rule beneath it.
+- **Wordmark:** "Atelier JW" in Castoro at the wordmark size, espresso, no underline, linking home. There is no mark or logo beside it.
+- **Navigation:** four Red Hat Text links at the body size in ink (Forge Kitchen, Bakery, Company, Contact), always visible, with 10px of vertical padding for a comfortable target. The underline is transparent at rest and fades to the text colour on hover over 0.2s.
+- **Theme switch:** a round icon-only button (44px, 1px `rule` outline, no fill) with `role="switch"` and the label "Dark theme". The outline moves to soft ink on hover. The half-filled circle turns 180 degrees when the theme changes.
 
-### Theme switch
-- **Style:** pill track in `switch` (96u by 40u; 76px by 44px on small screens) with an olive knob that slides across over 0.5s. Sun and moon are outline icons; the one under the knob takes `on-olive`, the other olive. It is a `button` with `role="switch"`.
+### Links
+- **Inline link:** olive, in the type of the sentence around it, with a 1px underline that thickens to 2px on hover.
+- **Mail link:** the email address at the mail size in olive, same underline behaviour, set on its own line under one sentence of body copy.
+- **Focus:** every focusable element takes a 2px olive outline offset 3px.
 
-### Navigation
-- **Style:** three Red Hat Text links at the nav size, 48u apart, in the inherited ink colour. Hover and focus draw a 1px underline from the left over 0.45s. A strong vertical hairline separates the links from the theme switch. On small screens the links wrap to a second row with 10px vertical padding; there is no hamburger.
-- **Wordmark:** olive leaf mark, a strong vertical hairline, then "Atelier JW" in Castoro.
+### Prints
+Photographs fill their box with `object-fit: cover`, square-cornered, with `paper` behind them while loading, explicit width and height and a real `alt`. In dark they are dimmed to 90% brightness. The hero prints load eagerly, the pot with high priority; photographs below the hero load lazily.
+- **Print:** 3:2.
+- **Pair:** two portrait photographs side by side with `gap` between them, inside a 3:2 box so the pair is the same height as a print.
+- **Wide:** the table photograph at 2:1 across the wrap, 3:2 at 900px and below.
 
-### Chapter prints
-Three equal photographs, each a link to its section, with a centred Castoro italic caption beneath. On hover or focus the photograph scales to 1.035 inside its frame over 1.1s and a 1px underline grows from the centre of the caption. On arrival each print is unveiled from the top edge, staggered 0.1s, while the image settles from 1.09 scale.
+### Caption note
+One small style, caption size in soft ink, 14px under a photograph or a group of photographs, saying that the photographs are illustrative. The footer repeats it for the whole page.
 
-### Brand band
-A full-width strip in `band`: brand title with the short olive bar beneath, a strong vertical hairline, then a short description capped at 690u. The Forge Kitchen band carries the page's one material, a linen strip with an olive stripe, masked into the right edge. On small screens title and text stack and the hairline is removed.
+### Chapter
+A print or a pair, its caption note, a headline, then one paragraph of body copy capped at 31em. Two chapters sit side by side on the halves of the grid.
 
-### Ledger
-Facts as a definition list: each row opens with a 1px hairline, a label in soft ink above a Castoro value in espresso, 16u of padding; the list closes with a hairline. The wide variant puts the label in a 250u column beside the value and stacks on small screens.
+### Ruled row
+A 1px hairline, then a headline on the left half and content on the right half, aligned on their first baselines. The content is either a statement at the intro size (Company) or a sentence of body copy with the mail link beneath it (Contact). At 900px and below the headline stacks above the content with a 14px gap.
 
-### Founders
-Two columns, each under a strong hairline: name at the title size, role as a label, one sentence of body copy capped at 40ch.
-
-### Photographs and figcaptions
-Photographs sit in their fixed proportions with `object-fit: cover`. Any photograph that could be mistaken for a product or a place carries a label-size figcaption in soft ink saying it is illustrative, and the footer repeats the note. Below the fold, photographs settle from 1.09 scale as they enter view where scroll-driven animation is supported.
-
-### Contact band
-The closing section is a full-width olive field: the contact title in the left six columns, and in the right six a short line of copy, the email address as a Castoro link with a 1px underline that thickens to 3px on hover and an arrow that nudges up and right, then the address. Focus rings and selection invert to cream here.
+### Skip link
+An olive block with cream text, off screen until focused, then 16px from the top left corner.
 
 ### Footer
-One row of label-size soft-ink text on flour: copyright, place, underlined email, and the illustrative-photography note beneath.
+One row of caption-size soft-ink text on flour, copyright at the left and the photography note at the right, wrapping onto two lines when narrow.
 
 ### Motion
-One ease, `cubic-bezier(0.16, 1, 0.3, 1)`, for everything that moves. Entrances happen once, on arrival, in reading order: headline and intro rise 16u out of a 5px blur, prints unveil, captions and facts fade. Under `prefers-reduced-motion: reduce` all transitions and animations are off.
+The page does not animate on arrival or on scroll. Motion is feedback only, and all of it sits inside `prefers-reduced-motion: no-preference`: the navigation underline fades in over 0.2s, the theme-switch icon turns over 0.5s on `cubic-bezier(0.16, 1, 0.3, 1)`, and in-page links scroll smoothly. Underline thickening and the switch outline change are instant.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** write desktop dimensions as `calc(n * var(--u))` so new elements scale with the rest of the 1536px composition, and give them fixed or clamp values inside the 960px breakpoint.
-- **Do** author every colour in both themes, using the custom properties; check the dark theme whenever olive is involved, because it inverts from a deep field to a pale one.
-- **Do** keep photographs square-cornered, in one of the existing proportions (474:325, 3:2, 2:3, 21:9), with a real `alt` and explicit width and height.
-- **Do** label any image that could read as a product or a location as illustrative, in a label-size figcaption.
-- **Do** set facts as ledger rows on hairlines, label above value.
+- **Do** start headings and text at the left margin or at the middle line of the four-column grid, and size photographs to a quarter, a half or the full width.
+- **Do** separate sections with `space`, and keep hairlines to the ruled rows.
+- **Do** keep photographs square-cornered at 3:2 (or as a pair inside a 3:2 box, or the 2:1 wide photograph), over `paper`, with a real `alt` and explicit width and height.
+- **Do** put the caption note under any photograph that could read as a product or a location.
+- **Do** author every colour in both themes, using the custom properties, and dim photographs in dark instead of replacing them.
+- **Do** take type sizes from the seven-step ramp.
+- **Do** keep all motion inside `prefers-reduced-motion: no-preference`.
+- **Do** keep the navigation links visible at every width, and the 2px olive focus outline with its 3px offset.
 - **Do** put styles in `styles.css`; the content security policy blocks inline `style` attributes and third-party fonts and stylesheets.
 - **Do** write asset URLs in `styles.css` from the repository root (`assets/fonts/...`); the deploy script rewrites them.
-- **Do** keep the 2px olive focus outline with its 3px offset, and the cream version on olive.
 
 ### Don't:
-- **Don't** add a second accent colour or a second coloured field; olive is the only chromatic voice and it is spoken for.
-- **Don't** use olive for body text or decorative fills.
-- **Don't** add shadows, blurs, gradients over text, or rounded corners on photographs.
+- **Don't** use olive as a field, band, bar or heading colour; it belongs to links and focus.
+- **Don't** add a second accent colour or a second surface colour.
+- **Don't** divide with vertical lines, tinted bands or decorative bars.
+- **Don't** add shadows, blurs, gradients, or rounded corners on photographs.
 - **Don't** use bold; every style is weight 400.
-- **Don't** set headlines in italic or reading text in Castoro.
 - **Don't** load fonts from a third-party host or add a third family.
+- **Don't** add entrance, scroll-driven or looping animation.
 - **Don't** swap photographs per theme; dim them.
 - **Don't** present an illustrative image as an actual Forge Kitchen product or an actual café.
-- **Don't** animate on a loop or re-trigger entrances; prints are hung once.
